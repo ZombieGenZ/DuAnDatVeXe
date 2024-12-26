@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    font-family: "Montserrat", serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #ff007c, #40007c, #000000);
+}
+
+
+.navbar {
+    background-color: bisque;
+    height: 5rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: right;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: darkorchid;
+}
+
+.navbutton {
+    margin-right: 10px;
+}
+
+.itembutton {
+    height: 50px;
+    width: 200px;
+    font-size: 15px;
+    padding: 20px;
+    text-decoration: none;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    margin: 0 10px;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  
+.itembutton:hover {
+    background: #073b4c;
+    color: #fff;
+}
+
+
+#dataform {
+    position: absolute;
+    height: auto;
+    width: 50%;
+    margin-top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: grid;
+    place-content: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#dataform #TieuDe {
+    margin-bottom: 20px;
+}
+
+#dataform #TieuDe1 {
+    margin-bottom: 20px;
+}
+
+#dataform #TieuDe::before {
+    content: '🎫';
+    margin-right: 20px;
+}
+
+#dataform #TieuDe1::before {
+    content: '🧾';
+    margin-right: 20px;
+}
+
+#dataform .logo {
+    margin: 0 0 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dataform .Luachon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 10px 0;
+}
+
+#dataform input[name="bookingforpp"],
+#dataform input[type="text"],
+#dataform input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#dataform input[type="submit"] {
+    background-color: #4CAF50;
+    margin-top: 25px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dataform input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#SoLuong {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.formhoadon {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+.HinhThuc {
+    display: flex;
+    gap: 20px;
+}
+
+.HinhThuc label {
+    font-weight: bold;
+}
+
+.note{
+    margin-top: 20px;
+}
+
+.menuBar{
+    display: none;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    margin: 0 10px;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.menuBar:hover {
+    background: #073b4c;
+    color: #fff;
+}
+
+.menuItem {
+    position: absolute;
+    left: -270px;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 100vh;
+    background: #073b4c;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.active {
+    animation: slideIn 0.5s forwards;
+}
+
+.hidden {
+    animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        left: -270px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0;
+    }
+    to {
+        left: -270px;
+    }
+}
+
+.Buttonitem {
+    height: 20px;
+    width: 200px;
+    font-size: 15px;
+    padding: 20px;
+    text-decoration: none;
+    background: #fff;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    margin: 20px 10px 0 10px;
+    transition: all 0.4s;
+}
+
+.Buttonitem:hover {
+    color: #fff;
+    background-color: #073b4c;
+}
+
+@media screen and (max-width: 767px) and (max-height: 1024px) {
+    .itembutton {
+        display: none;
+    }
+
+    .menuBar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #TieuDe {
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (min-width: 344px) and (min-height: 667px) {
+    #dataform {
+        margin: 50px 0;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+    #dataform {
+        width: 50%;
+    }
+}

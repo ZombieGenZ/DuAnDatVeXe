@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà xe Anh Đức</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-bus"></i>
+            <h2>Nhà xe Anh Đức</h2>
+        </div>
+        <div class="navbutton">
+            <a href="index.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Đặt vé xe ngày tết</a>
+            <a href="bookfornormal.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Đặt vé xe ngày thường</a>
+            <a href="Vanchuyenhang.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Vận chuyển hàng hóa
+            </a>
+            <button class="menuBar" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="menuItem" id="menuItems">
+        <a href="index.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Đặt vé xe ngày tết</a>
+            <br>
+        <a href="bookfornormal.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Đặt vé xe ngày thường</a>
+            <br>
+        <a href="Vanchuyenhang.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Vận chuyển hàng hóa</a>
+    </div>
+    <form id="dataform"></form>
+    <script src="ThanhToan.js"></script>
+</body>
+</html>

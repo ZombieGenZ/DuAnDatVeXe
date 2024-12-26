@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà xe Anh Đức</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-bus"></i>
+            <h2>Nhà xe Anh Đức</h2>
+        </div>
+        <div class="navbutton">
+            <a href="index.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Đặt vé xe ngày tết</a>
+            <a href="bookfornormal.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Đặt vé xe ngày thường</a>
+            <a href="Vanchuyenhang.html" class="itembutton">
+                <i class="fa-solid fa-book"></i>
+                Vận chuyển hàng hóa
+            </a>
+            <button class="menuBar" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="menuItem" id="menuItems">
+        <a href="index.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Đặt vé xe ngày tết</a>
+            <br>
+        <a href="bookfornormal.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Đặt vé xe ngày thường</a>
+            <br>
+        <a href="Vanchuyenhang.html" class="Buttonitem">
+            <i class="fa-solid fa-book"></i>
+            Vận chuyển hàng hóa</a>
+    </div>
+        <form id="dataform">
+            <h1 id="TieuDe">Đăng ký vé xe ngày Tết</h1>
+            <div class="Nhaplieu">
+                <div class="GiaodienText">
+                    <label>Họ và tên: </label>
+                    <input type="text" id="Fullname" name="bookingforpp" placeholder="Họ và tên" required />
+                </div>
+                <div class="GiaodienText">
+                    <label>Số điện thoại: </label>
+                    <input type="text" id="PhoneName" name="bookingforpp" placeholder="Số điện thoại" required />
+                </div>
+                <div class="GiaodienText">
+                    <label>Nơi đi:</label>
+                    <input list="placego" id="PlaceGo" name="bookingforpp" placeholder="Tỉnh" required />
+                    <datalist id="placego">
+                        <option value="Đồng Nai"></option>
+                        <option value="Sài Gòn"></option>
+                        <option value="Bình Dương"></option>
+                        <option value="Bình Phước"></option>
+                        <option value="Quảng Trị"></option>
+                        <option value="Thừa Thiên Huế"></option>
+                        <option value="Quảng Nam"></option>
+                        <option value="KonTum"></option>
+                        <option value="Gia Lai"></option>
+                        <option value="Đắk-Lắk"></option>
+                        <option value="Đắk-Nông"></option>
+                        <option value="Hà Tĩnh"></option>
+                        <option value="Nghệ An"></option>
+                    </datalist>
+                </div>
+                <div class="GiaodienText">
+                    <label>Nơi đến:</label>
+                    <input list="placeto" id="PlaceTo" name="bookingforpp" placeholder="Tỉnh" required />
+                    <datalist id="placeto" itemprop="bottom">
+                        <option value="Đồng Nai"></option>
+                        <option value="Sài Gòn"></option>
+                        <option value="Bình Dương"></option>
+                        <option value="Bình Phước"></option>
+                        <option value="Quảng Trị"></option>
+                        <option value="Thừa Thiên Huế"></option>
+                        <option value="Quảng Nam"></option>
+                        <option value="KonTum"></option>
+                        <option value="Gia Lai"></option>
+                        <option value="Đắk-Lắk"></option>
+                        <option value="Đắk-Nông"></option>
+                        <option value="Hà Tĩnh"></option>
+                        <option value="Nghệ An"></option>
+                    </datalist>
+                </div>
+                <div class="GiaodienText">
+                    <label>Địa chỉ đón và đến cụ thể:</label>
+                    <input type="text" id="DetailLocal" name="bookingforpp" placeholder="VD:   phường A, tỉnh A đến phường B, tỉnh B" required />
+                </div>
+                <div class="GiaodienText">
+                    <label>Số vé đặt trước:</label>
+                    <input type="number" id="CountTicket" name="bookingforpp" placeholder="Đặt vé" min="1" required />
+                </div>
+                <div class="GiaodienText">
+                    <label>Tuỳ chọn số giường mong muốn (không bắt buộc):</label>
+                    <input type="text" id="CountCustomer" name="bookingforpp" placeholder="VD:   đặt 2 vé => 2, 4 (Giường số 2 và số 4)" />
+                </div>
+            </div>
+            <input type="submit" id="Submit" value="Xác nhận đặt">
+            <div class="note">
+                ⚠️ Lưu ý: Vui lòng điền đầy đủ và chính xác thông tin trước khi nhấn "Xác nhận đặt".
+            </div>
+        </form>
+    <script src="index.js"></script>
+</body>
+</html>
