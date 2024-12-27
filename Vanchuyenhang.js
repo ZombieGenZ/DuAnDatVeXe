@@ -30,6 +30,7 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
         const DonViTinh = document.getElementById("DonViTinh").value;
         const HoVaTen = document.getElementById("fullname").value;
         const SoDienThoai = document.getElementById("phone").value;
+        const NgayNhan = document.getElementById("DetailDay").value;
         const NoiNhan = document.getElementById("PlaceGo").value;
         const NoiGiao = document.getElementById("PlaceTo").value;
         const ChiTiet = document.getElementById("Detailmore").value;
@@ -40,7 +41,7 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
 
         if(!isValidPhoneNumber(SoDienThoai)) {
             alert("Số điện thoại không hợp lệ !");
-        } else if (TenHang.toLowerCase() == BangGiaXeMay[0].name) {
+        } else if (TenHang.toString().toLowerCase() == BangGiaXeMay[0].name) {
             document.getElementById("Weight").readOnLy = true;
             const DonVanChuyen = {
                 TenHang: TenHang,
@@ -48,11 +49,12 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
                 DonViTinh: DonViTinh,
                 HoVaTen: HoVaTen,
                 SoDienThoai: SoDienThoai,
+                NgayNhan: NgayNhan,
                 NoiNhan: NoiNhan,
                 NoiGiao: NoiGiao,
                 ChiTiet: ChiTiet,
                 title: "Vận chuyển hàng hoá",
-                price: BangGiaXeMay[0].price * SoLuong,
+                price: BangGiaXeMay[0].price,
                 status: false,
             };
 
@@ -60,6 +62,17 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
             localStorage.setItem('DatVe', JSON.stringify(DonVanChuyen));
             window.location.href = "ThanhToan.html";
         } else {
+            let GiaTien;
+            let TongKhoiLuong = KhoiLuong * SoLuong;
+            if(TongKhoiLuong <= 10) {
+                GiaTien = 100000;
+            } else if(TongKhoiLuong > 10 && TongKhoiLuong <= 100) {
+                GiaTien = 200000;
+            } else if(TongKhoiLuong > 100 && TongKhoiLuong <= 1000) {
+                GiaTien = 500000;
+            } else if(TongKhoiLuong > 1000) {
+                GiaTien = 1000000;
+            }
             const DonVanChuyen = {
                 TenHang: TenHang,
                 KhoiLuong: KhoiLuong || "Không nhập",
@@ -67,11 +80,12 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
                 DonViTinh: DonViTinh,
                 HoVaTen: HoVaTen,
                 SoDienThoai: SoDienThoai,
+                NgayNhan: NgayNhan,
                 NoiNhan: NoiNhan,
                 NoiGiao: NoiGiao,
                 ChiTiet: ChiTiet,
                 title: "Vận chuyển hàng hoá",
-                price: 150000,
+                price: GiaTien,
                 status: false,
             };
 

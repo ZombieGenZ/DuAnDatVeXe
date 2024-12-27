@@ -30,6 +30,7 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
       const placeGo = document.getElementById("PlaceGo").value;
       const placeTo = document.getElementById("PlaceTo").value;
       const detaillocal = document.getElementById("DetailLocal").value;
+      const detailday = document.getElementById("DetailDay").value;
       const countTicket = document.getElementById("CountTicket").value;
       const countCustomer = document.getElementById("CountCustomer").value;
       if(!isValidPhoneNumber(phone)) {
@@ -43,6 +44,7 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
               placeGo: placeGo,
               placeTo: placeTo,
               detaillocal: detaillocal,
+              detailday: detailday,
               countTicket: countTicket,
               countCustomer: countCustomer || "Không nhập",
               title: "Đặt vé xe ngày tết",
@@ -54,6 +56,7 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
           document.getElementById("PlaceGo").value = '';
           document.getElementById("PlaceTo").value = '';
           document.getElementById("DetailLocal").value = '';
+          document.getElementById("DetailDay").value = '';
           document.getElementById("CountTicket").value = '';
           document.getElementById("CountCustomer").value = '';
   

@@ -5,15 +5,17 @@
 
 body {
     background: radial-gradient(circle at center, #ff007c, #40007c, #000000);
+    min-height: 100vh;
 }
 
 
 .navbar {
     background-color: bisque;
     height: 5rem;
-    display: flex;
     position: sticky;
     top: 0;
+    display: flex;
+    z-index: 999;
     justify-content: right;
     align-items: center;
 }
@@ -60,7 +62,7 @@ body {
 #dataform {
     position: absolute;
     height: auto;
-    width: 50%;
+    width: 80%;
     margin-top: 20px;
     top: 50%;
     left: 50%;
@@ -238,7 +240,13 @@ body {
     background-color: #073b4c;
 }
 
-@media screen and (max-width: 767px) and (max-height: 1024px) {
+@media screen and (max-width: 1000px){
+
+    #dataform {
+        width: 65%;
+        margin-top: 150px;
+    }
+
     .itembutton {
         display: none;
     }
@@ -254,16 +262,23 @@ body {
     }
 }
 
-
-@media screen and (min-width: 344px) and (min-height: 667px) {
+@media screen and (max-width: 453px){
     #dataform {
-        margin: 50px 0;
+        margin: 200px 0;
+    }
+}
+
+
+@media screen and (max-width: 320px){
+    #dataform {
+        margin: 100px 0;
         width: 80%;
     }
 }
 
-@media screen and (min-width: 1024px) and (min-height: 600px) {
+@media screen and (min-width: 1024px){
     #dataform {
-        width: 50%;
+        margin: 200px 0;
+        width: 65%;
     }
 }

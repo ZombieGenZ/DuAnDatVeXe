@@ -22,49 +22,51 @@ function isValidPhoneNumber(phoneNumber) {
 }
 
 document.getElementById("dataform").addEventListener("submit", function(event) {
-    try {
-      event.preventDefault();
+  try {
+    event.preventDefault();
+    const fullname = document.getElementById("Fullname").value;
+    const phone = document.getElementById("PhoneName").value;
+    const placeGo = document.getElementById("PlaceGo").value;
+    const placeTo = document.getElementById("PlaceTo").value;
+    const detaillocal = document.getElementById("DetailLocal").value;
+    const detailday = document.getElementById("DetailDay").value;
+    const countTicket = document.getElementById("CountTicket").value;
+    const countCustomer = document.getElementById("CountCustomer").value;
+    if(!isValidPhoneNumber(phone)) {
 
-      const fullname = document.getElementById("Fullname").value;
-      const phone = document.getElementById("PhoneName").value;
-      const placeGo = document.getElementById("PlaceGo").value;
-      const placeTo = document.getElementById("PlaceTo").value;
-      const detaillocal = document.getElementById("DetailLocal").value;
-      const countTicket = document.getElementById("CountTicket").value;
-      const countCustomer = document.getElementById("CountCustomer").value;
-      if(!isValidPhoneNumber(phone)) {
+      alert("Số điện thoại không hợp lệ !");
 
-        alert("Số điện thoại không hợp lệ !");
+    } else {
+        const ThongtinNguoiDung = {
+            fullname: fullname,
+            PhoneNumber: phone,
+            placeGo: placeGo,
+            placeTo: placeTo,
+            detaillocal: detaillocal,
+            detailday: detailday,
+            countTicket: countTicket,
+            countCustomer: countCustomer || "Không nhập",
+            title: "Đặt vé xe ngày thường",
+            price: 700000,
+            status: false,
+        };
+        document.getElementById("Fullname").value = '';
+        document.getElementById("PhoneName").value = '';
+        document.getElementById("PlaceGo").value = '';
+        document.getElementById("PlaceTo").value = '';
+        document.getElementById("DetailLocal").value = '';
+        document.getElementById("DetailDay").value = '';
+        document.getElementById("CountTicket").value = '';
+        document.getElementById("CountCustomer").value = '';
 
-      } else {
-          const ThongtinNguoiDung = {
-              fullname: fullname,
-              PhoneNumber: phone,
-              placeGo: placeGo,
-              placeTo: placeTo,
-              detaillocal: detaillocal,
-              countTicket: countTicket,
-              countCustomer: countCustomer || "Không nhập",
-              title: "Đặt vé xe ngày thường",
-              price: 700000,
-              status: false,
-          };
-          document.getElementById("Fullname").value = '';
-          document.getElementById("PhoneName").value = '';
-          document.getElementById("PlaceGo").value = '';
-          document.getElementById("PlaceTo").value = '';
-          document.getElementById("DetailLocal").value = '';
-          document.getElementById("CountTicket").value = '';
-          document.getElementById("CountCustomer").value = '';
-  
-          console.log(ThongtinNguoiDung);
-          localStorage.setItem('DatVe', JSON.stringify(ThongtinNguoiDung));
-          window.location.href = "ThanhToan.html";
-        }
+        console.log(ThongtinNguoiDung);
+        localStorage.setItem('DatVe', JSON.stringify(ThongtinNguoiDung));
+        window.location.href = "ThanhToan.html";
       }
-    catch (error) {
-      console.log(`Lỗi khi gửi dữ liệu: ${error}`);
     }
+  catch (error) {
+    console.log(`Lỗi khi gửi dữ liệu: ${error}`);
+  }
 });
 
 
