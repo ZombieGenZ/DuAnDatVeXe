@@ -163,6 +163,12 @@ body {
     margin-top: 20px;
 }
 
+.note1 {
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
 .menuBar{
     display: none;
     height: 50px;
@@ -244,7 +250,7 @@ body {
 
     #dataform {
         width: 65%;
-        margin-top: 150px;
+        margin-top: 200px;
     }
 
     .itembutton {

@@ -45,8 +45,8 @@
             <i class="fa-solid fa-book"></i>
             Vận chuyển hàng hóa</a>
     </div>
-    <form id="dataform">
-        <h1 id="TieuDe">Đăng ký vé xe ngày thường</h1>
+    <form id="dataform" autocomplete="off">
+        <h1 id="TieuDe">Đặt vé xe ngày thường</h1>
         <div class="Nhaplieu">
             <div class="GiaodienText">
                 <label>Họ và tên: </label>
@@ -105,10 +105,6 @@
             <div class="GiaodienText">
                 <label>Số vé đặt trước:</label>
                 <input type="number" id="CountTicket" name="bookingforpp" placeholder="Đặt vé" min="1" required />
-            </div>
-            <div class="GiaodienText">
-                <label>Tuỳ chọn số giường mong muốn (không bắt buộc):</label>
-                <input type="text" id="CountCustomer" name="bookingforpp" placeholder="VD:   đặt 2 vé => 2, 4 (Giường số 2 và số 4)" />
             </div>
         </div>
         <input type="submit" id="Submit" value="Xác nhận đặt">

@@ -167,17 +167,19 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
             document.getElementById("Weight").readOnLy = true;
             const DonVanChuyen = {
                 TenHang: TenHang,
+                KhoiLuong: "Không nhập",
                 SoLuong: SoLuong,
                 DonViTinh: DonViTinh,
                 HoVaTen: HoVaTen,
                 SoDienThoai: SoDienThoai,
-                NgayNhan: `Ngày ${dd} tháng ${mm + 1} năm ${yy}`,
+                NgayNhan: `Ngày ${dd} tháng ${mm} năm ${yy}`,
                 moonday: `Ngày ${lunar.day} tháng ${lunar.month} năm ${lunar.year - 1} (âm lịch)`,
                 NoiNhan: NoiNhan,
                 NoiGiao: NoiGiao,
                 ChiTiet: ChiTiet,
                 title: "Vận chuyển hàng hoá",
-                price: BangGiaXeMay[0].price,
+                price: BangGiaXeMay[0].price.toLocaleString(),
+                tongtien: (BangGiaXeMay[0].price * SoLuong).toLocaleString(),
                 status: false,
             };
 
@@ -203,13 +205,13 @@ document.getElementById("dataform").addEventListener('submit', (event) => {
                 DonViTinh: DonViTinh,
                 HoVaTen: HoVaTen,
                 SoDienThoai: SoDienThoai,
-                NgayNhan: `Ngày ${dd} tháng ${mm + 1} năm ${yy}`,
+                NgayNhan: `Ngày ${dd} tháng ${mm} năm ${yy}`,
                 moonday: `Ngày ${lunar.day} tháng ${lunar.month} năm ${lunar.year - 1} (âm lịch)`,
                 NoiNhan: NoiNhan,
                 NoiGiao: NoiGiao,
                 ChiTiet: ChiTiet,
                 title: "Vận chuyển hàng hoá",
-                price: GiaTien,
+                tongtien: GiaTien.toLocaleString(),
                 status: false,
             };
 

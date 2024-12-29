@@ -146,7 +146,6 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
       const detaillocal = document.getElementById("DetailLocal").value;
       const detailday = document.getElementById("DetailDay").value;
       const countTicket = document.getElementById("CountTicket").value;
-      const countCustomer = document.getElementById("CountCustomer").value;
 
 
       const date = new Date(detailday);
@@ -168,12 +167,13 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
               placeGo: placeGo,
               placeTo: placeTo,
               detaillocal: detaillocal,
-              detailday: `Ngày ${dd} tháng ${mm + 1} năm ${yy}`,
+              detailday: `Ngày ${dd} tháng ${mm} năm ${yy}`,
               moonday: `Ngày ${lunar.day} tháng ${lunar.month} năm ${lunar.year - 1} (âm lịch)`,
               countTicket: countTicket,
-              countCustomer: countCustomer || "Không nhập",
               title: "Đặt vé xe ngày tết",
-              price: 1600000,
+              price: (1600000 * countTicket).toLocaleString(),
+              pricefirst: (500000).toLocaleString(),
+              conlai: (1600000 * countTicket - 500000).toLocaleString(),
               status: false,
           };
           document.getElementById("Fullname").value = '';
@@ -183,7 +183,6 @@ document.getElementById("dataform").addEventListener("submit", function(event) {
           document.getElementById("DetailLocal").value = '';
           document.getElementById("DetailDay").value = '';
           document.getElementById("CountTicket").value = '';
-          document.getElementById("CountCustomer").value = '';
   
           console.log(ThongtinNguoiDung);
           localStorage.setItem('DatVe', JSON.stringify(ThongtinNguoiDung));
